@@ -1,0 +1,28 @@
+//created on: 27 janv. 2014
+package dynamic
+
+//list any import classes here.
+import org.drools.runtime.process.WorkflowProcessInstance;
+
+
+//declare any global variables here
+
+rule "Your First Rule"
+
+    when
+        //conditions
+    then
+        //actions
+
+end
+
+rule "Select project release"	
+	ruleflow-group "select_subprocess"
+	when
+		$process: WorkflowProcessInstance()
+		eval( true )
+	then 
+		System.out.println("________________EAA");
+		((WorkflowProcessInstance)kcontext.getKnowledgeRuntime().getProcessInstance($process.getId())).setVariable("projectRealization_id","com.tnt.bpmn.projectRealization_projet_complete_100");
+		retract($process);
+end

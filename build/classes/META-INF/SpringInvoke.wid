@@ -1,0 +1,13 @@
+import org.drools.process.core.datatype.impl.type.StringDataType;
+[
+  [
+    "name" : "Spring Invoke",
+    "description" : "invoke bean spring",
+    "version" : "1.0",
+    "displayName" : "CustomHandler",
+    "parameters" : [
+        "Parameter" : new StringDataType()
+    ],
+    "icon" : ""
+  ]
+]

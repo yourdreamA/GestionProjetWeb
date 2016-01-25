@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.jboss.org/drools" xmlns="http://www.jboss.org/drools" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd" id="Definition" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+  <bpmn2:process id="com.tnt.bpmn.subProjectProcess" tns:version="1" tns:packageName="defaultPackage" tns:adHoc="false" name="Sample Process" isExecutable="true" processType="Private">
+    <bpmn2:property id="chefSousProjet" itemSubjectRef="ItemDefinition_516"/>
+    <bpmn2:property id="projectName" itemSubjectRef="ItemDefinition_516"/>
+    <bpmn2:property id="subProjectRealization_id" itemSubjectRef="ItemDefinition_516"/>
+    <bpmn2:property id="idSousProjet" itemSubjectRef="ItemDefinition_516"/>
+    <bpmn2:startEvent id="_1" name="StartProcess">
+      <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:userTask id="UserTask_1" name="Structure subproject">
+      <bpmn2:extensionElements>
+        <tns:onEntry-script scriptFormat="http://www.java.com/java">
+          <tns:script></tns:script>
+        </tns:onEntry-script>
+        <tns:onExit-script scriptFormat="http://www.java.com/java">
+          <tns:script></tns:script>
+        </tns:onExit-script>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_InputOutputSpecification_21">
+        <bpmn2:dataInput id="_DataInput_58" name="TaskName"/>
+        <bpmn2:dataInput id="_DataInput_59" name="Priority"/>
+        <bpmn2:dataInput id="_DataInput_60" name="Comment"/>
+        <bpmn2:dataInput id="_DataInput_61" name="GroupId"/>
+        <bpmn2:dataInput id="_DataInput_62" name="Skippable"/>
+        <bpmn2:dataInput id="_DataInput_63" name="Content"/>
+        <bpmn2:dataInput id="_DataInput_64" name="Locale"/>
+        <bpmn2:inputSet id="_InputSet_21" name="Input Set 21">
+          <bpmn2:dataInputRefs>_DataInput_58</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_59</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_60</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_61</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_62</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_63</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_64</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_58">
+        <bpmn2:targetRef>_DataInput_58</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_1">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_1">Structure subproject</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_2">_DataInput_58</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_59">
+        <bpmn2:targetRef>_DataInput_59</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_60">
+        <bpmn2:targetRef>_DataInput_60</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_4">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_8">#{idSousProjet}</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression">_DataInput_60</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_61">
+        <bpmn2:targetRef>_DataInput_61</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_62">
+        <bpmn2:targetRef>_DataInput_62</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_63">
+        <bpmn2:targetRef>_DataInput_63</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_64">
+        <bpmn2:targetRef>_DataInput_64</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:potentialOwner id="PotentialOwner_1">
+        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_1">
+          <bpmn2:formalExpression id="FormalExpression_5" language="http://www.java.com/java">#{chefSousProjet}</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" name="" sourceRef="_1" targetRef="UserTask_1"/>
+    <bpmn2:scriptTask id="ScriptTask_1" name="Generate Structure subproject" scriptFormat="http://www.java.com/java">
+      <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_3</bpmn2:outgoing>
+      <bpmn2:script>System.out.println(&quot;^^^^^^^^^^ in subrojectprocess&quot; + subProjectRealization_id);</bpmn2:script>
+    </bpmn2:scriptTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_2" tns:priority="1" name="" sourceRef="UserTask_1" targetRef="ScriptTask_1"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_3" tns:priority="1" sourceRef="ScriptTask_1" targetRef="ParallelGateway_3"/>
+    <bpmn2:userTask id="UserTask_2" name="Monitoring subproject">
+      <bpmn2:extensionElements>
+        <tns:onEntry-script scriptFormat="http://www.java.com/java">
+          <tns:script></tns:script>
+        </tns:onEntry-script>
+        <tns:onExit-script scriptFormat="http://www.java.com/java">
+          <tns:script></tns:script>
+        </tns:onExit-script>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_InputOutputSpecification_22">
+        <bpmn2:dataInput id="_DataInput_65" name="TaskName"/>
+        <bpmn2:dataInput id="_DataInput_66" name="Priority"/>
+        <bpmn2:dataInput id="_DataInput_67" name="Comment"/>
+        <bpmn2:dataInput id="_DataInput_68" name="GroupId"/>
+        <bpmn2:dataInput id="_DataInput_69" name="Skippable"/>
+        <bpmn2:dataInput id="_DataInput_70" name="Content"/>
+        <bpmn2:dataInput id="_DataInput_71" name="Locale"/>
+        <bpmn2:inputSet id="_InputSet_22" name="Input Set 22">
+          <bpmn2:dataInputRefs>_DataInput_65</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_66</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_67</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_68</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_69</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_70</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_71</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_65">
+        <bpmn2:targetRef>_DataInput_65</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_2">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_2">Monitoring subproject</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_3">_DataInput_65</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_66">
+        <bpmn2:targetRef>_DataInput_66</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_67">
+        <bpmn2:targetRef>_DataInput_67</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_5">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_9">#{idSousProjet}</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression">_DataInput_67</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_68">
+        <bpmn2:targetRef>_DataInput_68</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_69">
+        <bpmn2:targetRef>_DataInput_69</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_70">
+        <bpmn2:targetRef>_DataInput_70</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_71">
+        <bpmn2:targetRef>_DataInput_71</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:potentialOwner id="PotentialOwner_2">
+        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_2">
+          <bpmn2:formalExpression id="FormalExpression_6" language="http://www.mvel.org/2.0">#{chefSousProjet}</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
+    </bpmn2:userTask>
+    <bpmn2:callActivity id="CallActivity_1" tns:waitForCompletion="true" tns:independent="false" name="Subproject realization" calledElement="#{subProjectRealization_id}">
+      <bpmn2:extensionElements>
+        <tns:onEntry-script scriptFormat="http://www.java.com/java">
+          <tns:script></tns:script>
+        </tns:onEntry-script>
+        <tns:onExit-script scriptFormat="http://www.java.com/java">
+          <tns:script></tns:script>
+        </tns:onExit-script>
+      </bpmn2:extensionElements>
+      <bpmn2:documentation id="Documentation_1">généré (composé de TaskProcess)</bpmn2:documentation>
+      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_6</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="InputOutputSpecification_1">
+        <bpmn2:dataInput id="DataInput_1" itemSubjectRef="ItemDefinition_516" name="projectName"/>
+        <bpmn2:inputSet id="InputSet_1">
+          <bpmn2:dataInputRefs>DataInput_1</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_1">
+        <bpmn2:sourceRef>projectName</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_1</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+    </bpmn2:callActivity>
+    <bpmn2:sequenceFlow id="SequenceFlow_4" tns:priority="1" name="" sourceRef="ParallelGateway_3" targetRef="CallActivity_1"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_5" tns:priority="1" name="" sourceRef="ParallelGateway_3" targetRef="UserTask_2"/>
+    <bpmn2:parallelGateway id="ParallelGateway_2" name="" gatewayDirection="Converging">
+      <bpmn2:incoming>SequenceFlow_6</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_8</bpmn2:outgoing>
+    </bpmn2:parallelGateway>
+    <bpmn2:sequenceFlow id="SequenceFlow_6" tns:priority="1" sourceRef="CallActivity_1" targetRef="ParallelGateway_2"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_7" tns:priority="1" name="" sourceRef="UserTask_2" targetRef="ParallelGateway_2"/>
+    <bpmn2:userTask id="UserTask_3" name="Validate end subproject">
+      <bpmn2:extensionElements>
+        <tns:onEntry-script scriptFormat="http://www.java.com/java">
+          <tns:script></tns:script>
+        </tns:onEntry-script>
+        <tns:onExit-script scriptFormat="http://www.java.com/java">
+          <tns:script></tns:script>
+        </tns:onExit-script>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_9</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_InputOutputSpecification_23">
+        <bpmn2:dataInput id="_DataInput_72" name="TaskName"/>
+        <bpmn2:dataInput id="_DataInput_73" name="Priority"/>
+        <bpmn2:dataInput id="_DataInput_74" name="Comment"/>
+        <bpmn2:dataInput id="_DataInput_75" name="GroupId"/>
+        <bpmn2:dataInput id="_DataInput_76" name="Skippable"/>
+        <bpmn2:dataInput id="_DataInput_77" name="Content"/>
+        <bpmn2:dataInput id="_DataInput_78" name="Locale"/>
+        <bpmn2:inputSet id="_InputSet_23" name="Input Set 23">
+          <bpmn2:dataInputRefs>_DataInput_72</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_73</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_74</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_75</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_76</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_77</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_DataInput_78</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_72">
+        <bpmn2:targetRef>_DataInput_72</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_3">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_3">Validate end subproject</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_4">_DataInput_72</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_73">
+        <bpmn2:targetRef>_DataInput_73</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_74">
+        <bpmn2:targetRef>_DataInput_74</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_6">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_10">#{idSousProjet}</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression">_DataInput_74</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_75">
+        <bpmn2:targetRef>_DataInput_75</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_76">
+        <bpmn2:targetRef>_DataInput_76</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_77">
+        <bpmn2:targetRef>_DataInput_77</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DataInputAssociation_78">
+        <bpmn2:targetRef>_DataInput_78</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:potentialOwner id="PotentialOwner_3">
+        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_3">
+          <bpmn2:formalExpression id="FormalExpression_7" language="http://www.java.com/java">#{chefSousProjet}</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_8" tns:priority="1" name="" sourceRef="ParallelGateway_2" targetRef="UserTask_3"/>
+    <bpmn2:endEvent id="EndEvent_1" name="">
+      <bpmn2:incoming>SequenceFlow_9</bpmn2:incoming>
+      <bpmn2:terminateEventDefinition id="TerminateEventDefinition_1"/>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_9" tns:priority="1" name="" sourceRef="UserTask_3" targetRef="EndEvent_1"/>
+    <bpmn2:parallelGateway id="ParallelGateway_3" name="" gatewayDirection="Diverging">
+      <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_4</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
+    </bpmn2:parallelGateway>
+  </bpmn2:process>
+  <bpmn2:itemDefinition id="ItemDefinition_516" itemKind="Physical" structureRef="String"/>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="com.tnt.bpmn.subProjectProcess">
+      <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="_1">
+        <dc:Bounds height="48.0" width="48.0" x="35.0" y="38.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_UserTask_1" bpmnElement="UserTask_1">
+        <dc:Bounds height="76.0" width="113.0" x="170.0" y="24.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_UserTask_1">
+        <di:waypoint xsi:type="dc:Point" x="83.0" y="62.0"/>
+        <di:waypoint xsi:type="dc:Point" x="170.0" y="62.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BPMNShape_ScriptTask_1" bpmnElement="ScriptTask_1">
+        <dc:Bounds height="81.0" width="110.0" x="170.0" y="150.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_UserTask_1" targetElement="BPMNShape_ScriptTask_1">
+        <di:waypoint xsi:type="dc:Point" x="226.0" y="100.0"/>
+        <di:waypoint xsi:type="dc:Point" x="225.0" y="150.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="SequenceFlow_3" sourceElement="BPMNShape_ScriptTask_1" targetElement="BPMNShape_ParallelGateway_3">
+        <di:waypoint xsi:type="dc:Point" x="225.0" y="231.0"/>
+        <di:waypoint xsi:type="dc:Point" x="216.0" y="276.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BPMNShape_UserTask_2" bpmnElement="UserTask_2">
+        <dc:Bounds height="61.0" width="110.0" x="360.0" y="390.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_CallActivity_1" bpmnElement="CallActivity_1" isExpanded="true">
+        <dc:Bounds height="61.0" width="177.0" x="17.0" y="396.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_4" bpmnElement="SequenceFlow_4" sourceElement="BPMNShape_ParallelGateway_3" targetElement="BPMNShape_CallActivity_1">
+        <di:waypoint xsi:type="dc:Point" x="216.0" y="327.0"/>
+        <di:waypoint xsi:type="dc:Point" x="105.0" y="396.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="BPMNShape_ParallelGateway_3" targetElement="BPMNShape_UserTask_2">
+        <di:waypoint xsi:type="dc:Point" x="242.0" y="301.0"/>
+        <di:waypoint xsi:type="dc:Point" x="360.0" y="420.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BPMNShape_ParallelGateway_2" bpmnElement="ParallelGateway_2">
+        <dc:Bounds height="50.0" width="50.0" x="203.0" y="504.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="BPMNShape_CallActivity_1" targetElement="BPMNShape_ParallelGateway_2">
+        <di:waypoint xsi:type="dc:Point" x="105.0" y="457.0"/>
+        <di:waypoint xsi:type="dc:Point" x="203.0" y="529.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_UserTask_2" targetElement="BPMNShape_ParallelGateway_2">
+        <di:waypoint xsi:type="dc:Point" x="360.0" y="420.0"/>
+        <di:waypoint xsi:type="dc:Point" x="254.0" y="529.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BPMNShape_UserTask_3" bpmnElement="UserTask_3">
+        <dc:Bounds height="61.0" width="110.0" x="173.0" y="620.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_ParallelGateway_2" targetElement="BPMNShape_UserTask_3">
+        <di:waypoint xsi:type="dc:Point" x="228.0" y="555.0"/>
+        <di:waypoint xsi:type="dc:Point" x="228.0" y="620.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="390.0" y="633.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_9" bpmnElement="SequenceFlow_9" sourceElement="BPMNShape_UserTask_3" targetElement="BPMNShape_EndEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="283.0" y="650.0"/>
+        <di:waypoint xsi:type="dc:Point" x="390.0" y="651.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BPMNShape_ParallelGateway_3" bpmnElement="ParallelGateway_3">
+        <dc:Bounds height="50.0" width="50.0" x="191.0" y="276.0"/>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

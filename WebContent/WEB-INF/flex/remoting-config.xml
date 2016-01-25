@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service id="remoting-service" class="flex.messaging.services.RemotingService">
+
+	<adapters>
+		<!-- on demande a BlazeDs d interagir avec du code java -->
+		<adapter-definition id="java-object"
+			class="flex.messaging.services.remoting.adapters.JavaAdapter"
+			default="true" />
+	</adapters>
+
+	<default-channels>
+		<!-- canal utilisé par défaut pour discuter, ce canal avait été déclaré 
+			dans services-config.xml -->
+		<channel ref="my-amf" />
+	</default-channels>
+
+	<destination id="gestionUser">
+		<properties>
+			<factory>spring</factory>
+			<source>userService</source>
+		</properties>
+	</destination>
+
+	<destination id="projetService">
+		<properties>
+			<factory>spring</factory>
+			<source>projetService</source>
+		</properties>
+	</destination>
+
+	<destination id="sousProjetService">
+		<properties>
+			<factory>spring</factory>
+			<source>sousProjetService</source>
+		</properties>
+	</destination>
+	
+	<destination id="userApp">
+		<properties>
+			<factory>spring</factory>
+			<source>userApp</source>
+		</properties>
+	</destination>
+	
+	<destination id="projetApp">
+		<properties>
+			<factory>spring</factory>
+			<source>projetApp</source>
+		</properties>
+	</destination>
+	
+	<destination id="tacheService">
+		<properties>
+			<factory>spring</factory>
+			<source>tacheService</source>
+		</properties>
+	</destination>
+	
+	<destination id="sousProjetApp">
+		<properties>
+			<factory>spring</factory>
+			<source>sousProjetApp</source>
+		</properties>
+	</destination>
+	
+	<destination id="tacheApp">
+		<properties>
+			<factory>spring</factory>
+			<source>tacheApp</source>
+		</properties>
+	</destination>
+	
+</service>
